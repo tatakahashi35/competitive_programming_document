@@ -1,0 +1,31 @@
+site_name: competitive programming document
+
+theme:
+    name: material
+
+markdown_extensions:
+    - admonition
+
+nav:
+    - Home: index.md
+    - syntax:
+        - string: syntax/string.md
+        - vector: syntax/vector.md
+        - set: syntax/set.md
+        - map: syntax/map.md
+        - pair: syntax/pair.md
+    - math:
+        - math: math/math.md
+        - gcd: math/gcd.md
+        - pow: math/pow.md
+        - prime: math/prime.md
+        - modint: math/modint.md
+    - graph:
+        - graph: graph/graph.md
+        - dfs: graph/dfs.md
+        - bfs: graph/bfs.md
+        - dijkstra: graph/dijkstra.md
+        - union find: graph/union_find.md
+        - segment tree: graph/segment_tree.md
+    - util:
+        - util: util/util.md
