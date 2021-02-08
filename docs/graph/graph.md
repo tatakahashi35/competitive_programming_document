@@ -1,6 +1,5 @@
 # graph
-!!! Note
-    未検証
+
 ``` c++
 class Vertex{
 public:
@@ -9,16 +8,9 @@ public:
     long long distance; // ここまでの距離
     bool visited;
 
-    Vertex(long long i, long long w){
-        id = i;
-        weight = w;
-        distance = 0LL;
-        visited = false;
-    }
-
-    Vertex(long long i){
-        Vertex(i, 0LL);
-    }
+    Vertex(long long i, long long w) : id(i), weight(w), distance(0LL), visited(false){}
+    Vertex(long long i) : Vertex(i, 0LL){}
+    Vertex(){}
 
     bool operator<(const Vertex &v) const{
         // distance で比較
@@ -57,16 +49,9 @@ public:
     long long from, to;
     long long weight; // 枝重み
 
-    Edge(long long f, long long t, long long w){
-        id = id_count++;
-        from = f;
-        to = t;
-        weight = w;
-    }
-
-    Edge(long long f, long long t){
-        Edge(f, t, 1LL);
-    }
+    Edge(long long f, long long t, long long w) : id(id_count++), from(f), to(t), weight(w){}
+    Edge(long long f, long long t) : Edge(f, t, 1LL){}
+    Edge(){}
 
     bool operator<(const Edge &e) const{
         if(weight < e.weight){
@@ -123,4 +108,24 @@ public:
         return edges[vertex.id];
     }
 };
+```
+
+### init
+``` c++
+Graph graph(N, M); // vertex: N, edge: M
+Vertex v;
+for(int i = 0 ; i < N ; i++){
+    v = Vertex(i);
+    graph.vertice[i] = v;
+}
+Edge e1, e2;
+for(int i = 0 ; i < M ; i++){
+    long long from = ;
+    long long to = ;
+    long long weight = ;
+    e1 = Edge(from, to, weight);
+    graph.edges[from].push_back(e1);
+    e2 = Edge(to, from, weight);
+    graph.edges[to].push_back(e2);
+}
 ```
