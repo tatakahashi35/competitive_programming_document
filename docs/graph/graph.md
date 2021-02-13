@@ -8,8 +8,8 @@ public:
     long long distance; // ここまでの距離
     bool visited;
 
-    Vertex(long long i, long long w) : id(i), weight(w), distance(0LL), visited(false){}
-    Vertex(long long i) : Vertex(i, 0LL){}
+    Vertex(long long i, long long w) : id(i), weight(w), distance(INF), visited(false){}
+    Vertex(long long i) : Vertex(i, INF){}
     Vertex(){}
 
     bool operator<(const Vertex &v) const{
@@ -106,6 +106,12 @@ public:
     vector<Edge> next(Vertex vertex){
         // 隣接枝リストを返す
         return edges[vertex.id];
+    }
+
+    void init_vertex(){
+        for(long long i = 0; i < number_of_vertice; ++i){
+            vertice[i].distance = INF;
+        }
     }
 };
 ```

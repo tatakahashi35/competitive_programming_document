@@ -7,12 +7,12 @@ void dijkstra(long long vertex_id, Graph &graph){
     pq.push(graph.vertice[vertex_id]);
 
     while(!pq.empty()){
-        Vertex vertex = pq.front();
+        Vertex vertex = pq.top();
         pq.pop();
 
-        vector<Edge> next_edges = graph.next(start);
+        vector<Edge> next_edges = graph.next(vertex);
         for(Edge &edge : next_edges){
-            if(graph.vertice[edge.to].distance < vertex.distance + edge.weight){
+            if(graph.vertice[edge.to].distance > vertex.distance + edge.weight){
                 graph.vertice[edge.to].distance = vertex.distance + edge.weight;
                 pq.push(graph.vertice[edge.to]);
             }
