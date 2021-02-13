@@ -1,4 +1,4 @@
-site_name: competitive programming document
+site_name: Competitive Programming Document
 
 theme:
     name: material
@@ -8,24 +8,26 @@ markdown_extensions:
 
 nav:
     - Home: index.md
-    - syntax:
-        - string: syntax/string.md
-        - vector: syntax/vector.md
-        - set: syntax/set.md
-        - map: syntax/map.md
-        - pair: syntax/pair.md
-    - math:
+    - Syntax:
+        - String: syntax/string.md
+        - Vector: syntax/vector.md
+        - Set: syntax/set.md
+        - Map: syntax/map.md
+        - Pair: syntax/pair.md
+    - Math:
         - math: math/math.md
         - gcd: math/gcd.md
         - pow: math/pow.md
         - prime: math/prime.md
         - modint: math/modint.md
-    - graph:
-        - graph: graph/graph.md
-        - dfs: graph/dfs.md
-        - bfs: graph/bfs.md
-        - dijkstra: graph/dijkstra.md
-        - union find: graph/union_find.md
-        - segment tree: graph/segment_tree.md
-    - util:
-        - util: util/util.md
+    - Graph:
+        - Graph: graph/graph.md
+        - DFS: graph/dfs.md
+        - BFS: graph/bfs.md
+        - Dijkstra: graph/tsp.md
+        - TSP: graph/dijkstra.md
+        - Union Find: graph/union_find.md
+        - Segment Tree: graph/segment_tree.md
+    - Util:
+        - Utility: util/utility.md
+        - Boost: util/boost.md
