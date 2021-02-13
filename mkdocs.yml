@@ -16,10 +16,10 @@ nav:
         - Pair: syntax/pair.md
     - Math:
         - Math: math/math.md
-        - Gcd: math/gcd.md
-        - Pow: math/pow.md
+        - GCD: math/gcd.md
+        - POW: math/pow.md
         - Prime: math/prime.md
-        - Modint: math/modint.md
+        - ModInt: math/modint.md
     - graph:
         - Graph: graph/graph.md
         - DFS: graph/dfs.md
