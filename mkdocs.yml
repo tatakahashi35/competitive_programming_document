@@ -15,12 +15,12 @@ nav:
         - Map: syntax/map.md
         - Pair: syntax/pair.md
     - Math:
-        - math: math/math.md
-        - gcd: math/gcd.md
-        - pow: math/pow.md
-        - prime: math/prime.md
-        - modint: math/modint.md
-    - Graph:
+        - Math: math/math.md
+        - Gcd: math/gcd.md
+        - Pow: math/pow.md
+        - Prime: math/prime.md
+        - Modint: math/modint.md
+    - graph:
         - Graph: graph/graph.md
         - DFS: graph/dfs.md
         - BFS: graph/bfs.md
