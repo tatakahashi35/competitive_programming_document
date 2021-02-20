@@ -6,6 +6,12 @@ s = "hogehoge";
 s.substr(1, 3); // "oge"
 ```
 
+### string → int 変換
+``` c++
+string s = "123";
+stoi(s);
+```
+
 ### int → string 変換
 ``` c++
 ll num = 123;
