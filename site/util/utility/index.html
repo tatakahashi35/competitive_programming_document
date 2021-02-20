@@ -14,7 +14,7 @@
     
     
       
-        <title>Prime - Competitive Programming Document</title>
+        <title>Utility - Competitive Programming Document</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prime" class="md-skip">
+        <a href="#util" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Prime
+              Utility
             
           </span>
         </div>
@@ -274,14 +274,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
       
       <label class="md-nav__link" for="nav-3">
         Math
@@ -300,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/" class="md-nav__link">
+      <a href="../../math/math/" class="md-nav__link">
         Math
       </a>
     </li>
@@ -312,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gcd/" class="md-nav__link">
+      <a href="../../math/gcd/" class="md-nav__link">
         GCD
       </a>
     </li>
@@ -324,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pow/" class="md-nav__link">
+      <a href="../../math/pow/" class="md-nav__link">
         POW
       </a>
     </li>
@@ -334,20 +332,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../math/prime/" class="md-nav__link">
         Prime
       </a>
-      
     </li>
   
 
@@ -357,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modint/" class="md-nav__link">
+      <a href="../../math/modint/" class="md-nav__link">
         ModInt
       </a>
     </li>
@@ -491,12 +480,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
       
       <label class="md-nav__link" for="nav-5">
         Util
@@ -513,11 +504,49 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../util/utility/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Utility
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Utility
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -527,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../util/boost/" class="md-nav__link">
+      <a href="../boost/" class="md-nav__link">
         Boost
       </a>
     </li>
@@ -539,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../util/n_ary/" class="md-nav__link">
+      <a href="../n_ary/" class="md-nav__link">
         N 進数
       </a>
     </li>
@@ -570,6 +599,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    出力
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -581,76 +625,50 @@
               
                 
                 
-                <h1 id="prime">prime</h1>
+                <h1 id="util">util</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>未検証</p>
 </div>
-<pre><code class="language-c++">vector&lt;long long&gt; calc_primes(long long n){
-    // n 未満の素数を返す
-    vector&lt;long long&gt; primes;
+<pre><code class="language-c++">template&lt;class T&gt;
+T my_min(T head, T next){
+    return min(head, next);
+}
 
-    if(n &lt; 2){
-        return primes;
-    }
-
-    // init
-    vector&lt;bool&gt; prime_pool(n, true);
-    prime_pool[0] = false;
-    prime_pool[1] = false;
-    long long upper = (long long)ceill(sqrtl(n))) + 1LL;
-
-    long long k = 2;
-    while(k &lt; upper){
-        while(k &lt; upper){
-            if(prime_pool[k]){
-                // k: prime number
-                primes.push_back(k);
-                break;
-            }
-            k++;
-        }
-        long long next_prime = k;
-        for(long long i = next_prime * next_prime; i &lt; upper; i += next_prime){
-            prime_pool[i] = true;
-        }
-        k++;
-    }
-
-    for(int i = primes[primes.size() - 1]; i &lt; n; ++i){
-        if(prime_pool[i]){
-            primes.push_back(i);
-        }
-    }
-
-    return primes;
+template &lt;class T, class... T&gt;
+T my_min(T head, T... body){
+    return min(head, my_min(body...));
+}
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>未検証</p>
 </div>
-<pre><code class="language-c++">map&lt;long long&gt; prime_factor(long long n){
-    // 素因数分解
-    vector&lt;long long&gt; primes = calc_primes(n + 1); // N + 1 未満の素数
-    long long number_of_primes = primes.size();
-    map&lt;long, long&gt; prime_factors;
-
-    long long sqrt_n = (long long)ceill(sqrtl(n))) + 1LL;
-    for(long long i = 0; i &lt; number_of_primes; ++i){
-        if(n == 1){
-            break;
-        }
-        if(n % primes[i] == 0){
-            n /= primes[i];
-            prime_factors[primes[i]] = 1;
-            while(n % primes[i] == 0){
-                n /= primes[i];
-                prime_factors[primes[i]]++;
-            }
-        }
-    }
-    return prime_factors;
+<pre><code class="language-c++">template&lt;class T&gt;
+T my_max(T head, T next){
+    return max(head, next);
 }
+
+template &lt;class T, class... T&gt;
+T my_max(T head, T... body){
+    return max(head, my_max(body...));
+}
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>未検証</p>
+</div>
+<pre><code class="language-c++">bool comp(int i, int j) {
+    return vec[i] &lt; vec[j]
+}
+
+vector&lt;long long&gt; vec(N); // sort target
+vector&lt;long long&gt; index(N);
+iota(index.begin(), index.end(), 0);
+sort(index.begin(), index.end(), comp);
+</code></pre>
+<h3 id="_1">出力</h3>
+<pre><code class="language-c++">printf(&quot;%lld\n&quot;, answer);
 </code></pre>
                 
               
@@ -670,7 +688,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../pow/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../graph/segment_tree/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -679,19 +697,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                POW
+                Segment Tree
               </div>
             </div>
           </a>
         
         
-          <a href="../modint/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../boost/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ModInt
+                Boost
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
