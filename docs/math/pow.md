@@ -15,3 +15,7 @@ long long pow(long long a, long long n, long long m){
     }
 }
 ```
+
+``` c++
+long double p = powl(a, n);
+```

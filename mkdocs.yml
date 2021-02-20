@@ -24,8 +24,8 @@ nav:
         - Graph: graph/graph.md
         - DFS: graph/dfs.md
         - BFS: graph/bfs.md
-        - Dijkstra: graph/tsp.md
-        - TSP: graph/dijkstra.md
+        - Dijkstra: graph/dijkstra.md
+        - TSP: graph/tsp.md
         - Union Find: graph/union_find.md
         - Segment Tree: graph/segment_tree.md
     - Util:

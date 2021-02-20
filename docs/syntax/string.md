@@ -20,6 +20,11 @@ auto a = std::string() + 'a'; // "a"
 auto b = ""s + 'b'; // "b" (C++14)
 ```
 
+### 大文字判定
+``` c++
+isupper(c); // 大文字なら true
+```
+
 ### 検索
 ``` c++
 string word = "word";
