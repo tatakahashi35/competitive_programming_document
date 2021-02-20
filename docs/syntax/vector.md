@@ -44,6 +44,11 @@ auto min_itr = min_element(vec.begin(), vec.end());
 sort(vec.begin(), vec.end());
 ```
 
+### reverse
+``` c++
+reverse(vec.begin(), vec.end());
+```
+
 ### accumulate
 - sum
 ``` c++

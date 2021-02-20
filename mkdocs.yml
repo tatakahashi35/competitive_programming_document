@@ -31,3 +31,4 @@ nav:
     - Util:
         - Utility: util/utility.md
         - Boost: util/boost.md
+        - N 進数: util/n_ary.md
