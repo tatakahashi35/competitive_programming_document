@@ -344,9 +344,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Prime
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Prime
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prime_1" class="md-nav__link">
+    prime
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -570,6 +599,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prime_1" class="md-nav__link">
+    prime
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -582,10 +626,7 @@
                 
                 
                 <h1 id="prime">prime</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>未検証</p>
-</div>
+<h3 id="prime_1">prime</h3>
 <pre><code class="language-c++">vector&lt;long long&gt; calc_primes(long long n){
     // n 未満の素数を返す
     vector&lt;long long&gt; primes;
@@ -595,10 +636,10 @@
     }
 
     // init
-    vector&lt;bool&gt; prime_pool(n, true);
+    vector&lt;bool&gt; prime_pool(n+1, true);
     prime_pool[0] = false;
     prime_pool[1] = false;
-    long long upper = (long long)ceill(sqrtl(n))) + 1LL;
+    long long upper = (long long)ceill(sqrtl(n)) + 1LL;
 
     long long k = 2;
     while(k &lt; upper){
@@ -611,19 +652,20 @@
             k++;
         }
         long long next_prime = k;
-        for(long long i = next_prime * next_prime; i &lt; upper; i += next_prime){
-            prime_pool[i] = true;
+        for(long long i = next_prime * next_prime; i &lt; n; i += next_prime){
+            prime_pool[i] = false;
         }
         k++;
     }
 
-    for(int i = primes[primes.size() - 1]; i &lt; n; ++i){
+    for(int i = primes[primes.size() - 1] + 1; i &lt; n; ++i){
         if(prime_pool[i]){
             primes.push_back(i);
         }
     }
 
     return primes;
+}
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
