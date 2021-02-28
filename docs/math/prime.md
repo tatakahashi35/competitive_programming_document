@@ -1,8 +1,6 @@
 # prime
 
 ### prime
-!!! Note
-    未検証
 ``` c++
 vector<long long> calc_primes(long long n){
     // n 未満の素数を返す
@@ -13,10 +11,10 @@ vector<long long> calc_primes(long long n){
     }
 
     // init
-    vector<bool> prime_pool(n, true);
+    vector<bool> prime_pool(n+1, true);
     prime_pool[0] = false;
     prime_pool[1] = false;
-    long long upper = (long long)ceill(sqrtl(n))) + 1LL;
+    long long upper = (long long)ceill(sqrtl(n)) + 1LL;
 
     long long k = 2;
     while(k < upper){
@@ -29,19 +27,20 @@ vector<long long> calc_primes(long long n){
             k++;
         }
         long long next_prime = k;
-        for(long long i = next_prime * next_prime; i < upper; i += next_prime){
-            prime_pool[i] = true;
+        for(long long i = next_prime * next_prime; i < n; i += next_prime){
+            prime_pool[i] = false;
         }
         k++;
     }
 
-    for(int i = primes[primes.size() - 1]; i < n; ++i){
+    for(int i = primes[primes.size() - 1] + 1; i < n; ++i){
         if(prime_pool[i]){
             primes.push_back(i);
         }
     }
 
     return primes;
+}
 ```
 
 ### prime factor

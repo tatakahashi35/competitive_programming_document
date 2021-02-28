@@ -6,10 +6,10 @@ s = "hogehoge";
 s.substr(1, 3); // "oge"
 ```
 
-### string → int 変換
+### string → long long 変換
 ``` c++
 string s = "123";
-stoi(s);
+stoll(s);
 ```
 
 ### int → string 変換
